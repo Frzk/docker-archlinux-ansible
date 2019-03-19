@@ -3,7 +3,7 @@
 FROM archlinux/base:latest
 LABEL maintainer="François KUBLER"
 
-RUN pacman -Syu \
+RUN pacman -Syu --noconfirm \
  && pacman -S --noconfirm \
     git \
     python-pip
