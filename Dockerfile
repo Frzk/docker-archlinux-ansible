@@ -12,7 +12,8 @@ RUN pacman -Sy --noconfirm \
 
 RUN pip install --upgrade setuptools \
  && pip install wheel \
- && pip install ansible
+ && pip install ansible \
+ && pip install molecule-docker
 
 # Make sure /sbin/init points to /usr/lib/systemd/systemd
 # so that testinfra detects the container as 'systemd'.
