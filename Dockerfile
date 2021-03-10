@@ -1,6 +1,6 @@
 # Build Archlinux image.
 
-FROM archlinux/base:latest
+FROM archlinux/archlinux:latest
 LABEL maintainer="François KUBLER"
 
 RUN pacman -Sy --noconfirm \
@@ -20,7 +20,5 @@ RUN ln -s /usr/lib/systemd/systemd /sbin/init
 
 RUN mkdir -p /etc/ansible
 ADD hosts /etc/ansible
-
-ENV ANSIBLE_FORCE_COLOR 1
 
 ENTRYPOINT ["/lib/systemd/systemd"]
