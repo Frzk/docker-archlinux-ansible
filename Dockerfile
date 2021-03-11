@@ -1,6 +1,7 @@
 # Build Archlinux image.
 
-FROM archlinux/archlinux:latest
+#FROM archlinux/archlinux:latest
+FROM archlinux/archlinux:base-20210124.0.14185
 LABEL maintainer="François KUBLER"
 
 RUN pacman -Sy --noconfirm \
