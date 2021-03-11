@@ -12,7 +12,7 @@ LABEL maintainer="François KUBLER"
 #    python-pip
 RUN pacman -Sy --noconfirm \
     git \
-    python3-pip
+    python-pip
 
 RUN python3 -m pip install --upgrade pip \
  && python3 -m pip install --upgrade setuptools \
