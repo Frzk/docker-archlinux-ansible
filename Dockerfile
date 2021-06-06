@@ -1,8 +1,13 @@
 # Build Archlinux image.
 
 FROM archlinux/archlinux:latest
-#FROM archlinux/archlinux:base-20210124.0.14185
 LABEL maintainer="François KUBLER"
+
+# TEMP-FIX until hub.docker.com fix their sh*t.
+RUN patched_glibc=glibc-linux4-2.33-4-x86_64.pkg.tar.zst && \
+ curl -LO "https://repo.archlinuxcn.org/x86_64/$patched_glibc" && \
+ bsdtar -C / -xvf "$patched_glibc"
+# /TEMP-FIX until hub.docker.com fix their sh*t.
 
 RUN pacman -Sy --noconfirm \
     archlinux-keyring \
@@ -10,9 +15,6 @@ RUN pacman -Sy --noconfirm \
  && pacman -Sy --noconfirm \
     git \
     python-pip
-#RUN pacman -Sy --noconfirm \
-#    git \
-#    python-pip
 
 RUN python3 -m pip install --upgrade pip \
  && python3 -m pip install --upgrade setuptools \
