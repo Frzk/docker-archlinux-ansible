@@ -1,18 +1,18 @@
 # Build Archlinux image.
 
-#FROM archlinux/archlinux:latest
-FROM archlinux/archlinux:base-20210124.0.14185
+FROM archlinux/archlinux:latest
+#FROM archlinux/archlinux:base-20210124.0.14185
 LABEL maintainer="François KUBLER"
 
-#RUN pacman -Sy --noconfirm \
-#    archlinux-keyring \
-# && pacman -Syu --noconfirm \
-# && pacman -Sy --noconfirm \
-#    git \
-#    python-pip
 RUN pacman -Sy --noconfirm \
+    archlinux-keyring \
+ && pacman -Syu --noconfirm \
+ && pacman -Sy --noconfirm \
     git \
     python-pip
+#RUN pacman -Sy --noconfirm \
+#    git \
+#    python-pip
 
 RUN python3 -m pip install --upgrade pip \
  && python3 -m pip install --upgrade setuptools \
