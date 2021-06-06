@@ -22,7 +22,7 @@ RUN python3 -m pip install --upgrade pip \
 
 # Make sure /sbin/init points to /usr/lib/systemd/systemd
 # so that testinfra detects the container as 'systemd'.
-RUN ln -s /usr/lib/systemd/systemd /sbin/init
+RUN ln -sfn /usr/lib/systemd/systemd /sbin/init
 
 RUN mkdir -p /etc/ansible
 ADD hosts /etc/ansible
