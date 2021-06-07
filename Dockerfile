@@ -13,7 +13,9 @@ RUN pacman -Sy --noconfirm \
     archlinux-keyring \
  && pacman -Syu --noconfirm
  && pacman -Sy --noconfirm \
-    sudo
+    sudo \
+    git \
+    python-pip
 
 #RUN pip3 install --upgrade pip \
 # && pip3 install --upgrade setuptools \
