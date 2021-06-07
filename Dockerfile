@@ -11,7 +11,7 @@ RUN patched_glibc=glibc-linux4-2.33-4-x86_64.pkg.tar.zst && \
 
 RUN pacman -Sy --noconfirm \
     archlinux-keyring \
- && pacman -Syu --noconfirm
+ && pacman -Syu --noconfirm \
  && pacman -Sy --noconfirm \
     sudo \
     git \
