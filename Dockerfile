@@ -13,12 +13,13 @@ RUN pacman -Sy --noconfirm \
     archlinux-keyring \
  && pacman -Syu --noconfirm \
  && pacman -Sy --noconfirm \
+    sudo \
     git \
     python-pip
 
-RUN python3 -m pip install --upgrade pip \
- && python3 -m pip install --upgrade setuptools \
- && python3 -m pip install wheel ansible molecule[docker,lint]
+RUN pip3 install --upgrade pip \
+ && pip3 install --upgrade setuptools \
+ && pip3 install wheel ansible molecule[docker,lint]
 
 # Make sure /sbin/init points to /usr/lib/systemd/systemd
 # so that testinfra detects the container as 'systemd'.
