@@ -12,10 +12,8 @@ RUN patched_glibc=glibc-linux4-2.33-4-x86_64.pkg.tar.zst && \
 RUN pacman -Sy --noconfirm \
     archlinux-keyring \
  && pacman -Syu --noconfirm
-# && pacman -Sy --noconfirm \
-#    sudo \
-#    git \
-#    python-pip
+ && pacman -Sy --noconfirm \
+    sudo
 
 #RUN pip3 install --upgrade pip \
 # && pip3 install --upgrade setuptools \
